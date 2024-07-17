@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const htmlEditor = CodeMirror.fromTextArea(document.getElementById('html-code'), {
       mode: 'htmlmixed',
       theme: 'monokai',
-      lineNumbers: true
+      lineNumbers: true,
+      autoCloseTags: true
     });
   
     const cssEditor = CodeMirror.fromTextArea(document.getElementById('css-code'), {
