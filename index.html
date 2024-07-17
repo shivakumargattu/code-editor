@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Compiler</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Compiler</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/monokai.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="editer">
-            <h2>HTML</h2>
-            <textarea id="html-code" placeholder="Write HTML code here"></textarea>
-        </div>
-        <div class="editer">
-            <h2>CSS</h2>
-            <textarea id="css-code" placeholder="Write CSS code here"></textarea>
-        </div>
-        <div class="editer">
-            <h2>JS</h2>
-            <textarea id="js-code" placeholder="Write js code here"></textarea>
-        </div>
-        <button id="run-btn">Run</button>
-        <h2>Output</h2>
-        <iframe id="output-frame"></iframe>
+  <div class="container">
+    <div class="editor">
+      <h2>HTML</h2>
+      <textarea id="html-code" placeholder="Write HTML code here"></textarea>
     </div>
-    <script src="script.js"></script>
+    <div class="editor">
+      <h2>CSS</h2>
+      <textarea id="css-code" placeholder="Write CSS code here"></textarea>
+    </div>
+    <div class="editor">
+      <h2>JavaScript</h2>
+      <textarea id="js-code" placeholder="Write JavaScript code here"></textarea>
+    </div>
+    <button id="run-btn">Run</button>
+    <div class="output">
+      <h2>Output</h2>
+      <iframe id="output-frame"></iframe>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

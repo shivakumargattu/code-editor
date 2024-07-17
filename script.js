@@ -1,25 +1,49 @@
-document.getElementById("run-btn").addEventListener("click",function(){
-    const htmlCode=document.getElementById("html-code").value;
-    const cssCode=document.getElementById("css-code").value;
-    const jsCode=document.getElementById("js-code").value;
-    
-   const outputFrame=document.getElementById("output-frame");
-   const outputDocument=outputFrame.contentDocument
-   outputDocument.open();
-   outputDocument.write(`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <style>${cssCode}</style>
-    </head>
-    <body>
-    ${htmlCode}
-    <script>
-    ${jsCode}
-    <\/script>
-    </body>
-    </html>
-    `);
-    outputDocument.close();
-    
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const htmlEditor = CodeMirror.fromTextArea(document.getElementById('html-code'), {
+      mode: 'htmlmixed',
+      theme: 'monokai',
+      lineNumbers: true
+    });
+  
+    const cssEditor = CodeMirror.fromTextArea(document.getElementById('css-code'), {
+      mode: 'css',
+      theme: 'monokai',
+      lineNumbers: true
+    });
+  
+    const jsEditor = CodeMirror.fromTextArea(document.getElementById('js-code'), {
+      mode: 'javascript',
+      theme: 'monokai',
+      lineNumbers: true
+    });
+  
+    document.getElementById('run-btn').addEventListener('click', function() {
+      const htmlCode = htmlEditor.getValue();
+      const cssCode = cssEditor.getValue();
+      const jsCode = jsEditor.getValue();
+      const outputFrame = document.getElementById('output-frame');
+      const outputDocument = outputFrame.contentDocument || outputFrame.contentWindow.document;
+  
+      outputDocument.open();
+      outputDocument.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <style>${cssCode}</style>
+        </head>
+        <body>
+          ${htmlCode}
+          <script>
+            try {
+              ${jsCode}
+            } catch (error) {
+              document.body.innerHTML += '<div style="color: red; font-weight: bold;">JavaScript Error: ' + error.message + '</div>';
+            }
+          <\/script>
+        </body>
+        </html>
+      `);
+      outputDocument.close();
+    });
+  });
+  
