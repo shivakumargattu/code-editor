@@ -4,6 +4,16 @@ body {
   margin: 0;
   padding: 0;
 }
+nav{
+  background-color: black;
+  height: 10vh;
+  width: 100vw;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 
 .container {
   display: flex;
@@ -11,14 +21,36 @@ body {
   padding: 20px;
 }
 
-.editor, .output {
+.editor {
   flex: 1 1 calc(100% - 40px);
   margin: 10px;
   padding: 20px;
-  background: #fff;
+  background:#1A1110;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #f0f0f0;
+}
+
+.output {
+  flex: 1 1 calc(100% - 40px);
+  margin: 10px;
+  text-align: center;
+  padding: 20px;
+  background:#1A1110;
+  border: 1px solid #ccc;
+  color: #f0f0f0;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}
+.output1 {
+  flex: 1 1 calc(100% - 40px);
+  background:#f0f0f0;
+  border: 1px solid #ccc;
+  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
 }
 
 textarea {
@@ -36,7 +68,7 @@ button {
   display: block;
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
+  margin: 5px 10px ;
   background-color: #007bff;
   color: #fff;
   border: none;
